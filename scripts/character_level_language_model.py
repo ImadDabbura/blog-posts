@@ -461,8 +461,8 @@ def model(
         print(f"\033[1m\033[92m=======")
 
         # Sample one name
-        print(f"Sampled name: {sample(parameters, idx_to_chars, chars_to_idx,\
-            10).capitalize()}")
+        print(f"""Sampled name: {sample(parameters, idx_to_chars, chars_to_idx,
+            10).capitalize()}""")
         print(f"Smoothed loss: {smoothed_loss:.4f}\n")
 
         # Shuffle examples
