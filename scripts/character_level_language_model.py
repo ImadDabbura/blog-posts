@@ -435,7 +435,10 @@ def model(
 
     Returns
     -------
-
+    parameters : python dict
+        dictionary storing all the parameters of the model.
+    overall_loss : list
+        list stores smoothed loss per epoch.
     """
     # Get the data
     with open(file_path) as f:
