@@ -1,3 +1,6 @@
+"""
+Implementation of Character-Level Language Model on names.
+"""
 # Load packages
 import numpy as np
 
@@ -209,6 +212,26 @@ def clip_gradients(gradients, max_value):
 def rnn_backward(y, parameters, cache):
     """
     Implements Backpropagation on one name.
+
+    Arguments
+    ---------
+    y : list
+        list of integers for the index of the characters in the example.
+    parameters : python dict
+        dictionary containing the parameters.
+    cache : tuple
+            contains three python dictionaries:
+                xs -- input of all time steps.
+                hs -- hidden state of all time steps.
+                probs -- probability distribution of each character at each time
+                    step.
+
+    Returns
+    -------
+    grads : python dict
+        dictionary containing all the gradients.
+    h_prev : array
+        last hidden state from the current example.
     """
     # Retrieve xs, hs, and probs
     xs, hs, probs = cache
@@ -235,8 +258,10 @@ def rnn_backward(y, parameters, cache):
         dh_next = np.dot(parameters["Whh"].T, dhraw)
         # Clip the gradients using [-5, 5] as the interval
         grads = clip_gradients(grads, 5)
+    # Get the last hidden state
+    h_prev = hs[len(hs) - 1]
 
-    return grads
+    return grads, h_prev
 
 
 def update_parameters_with_adam(
@@ -480,7 +505,7 @@ def model(
             # Compute smooth loss
             smoothed_loss = smooth_loss(smoothed_loss, loss)
             # Bwd pass
-            grads = rnn_backward(y, parameters, cache)
+            grads, h_prev = rnn_backward(y, parameters, cache)
             # Update parameters
             parameters, s = update_parameters_with_rmsprop(
                 parameters, grads, s)
