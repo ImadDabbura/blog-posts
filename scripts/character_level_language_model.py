@@ -259,7 +259,7 @@ def rnn_backward(y, parameters, cache):
         # Clip the gradients using [-5, 5] as the interval
         grads = clip_gradients(grads, 5)
     # Get the last hidden state
-    h_prev = hs[len(hs) - 1]
+    h_prev = hs[len(xs) - 1]
 
     return grads, h_prev
 
