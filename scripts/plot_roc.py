@@ -123,18 +123,18 @@ def plot_roc_and_pr_curves(models, X_train, y_train, X_valid, y_valid, roc_title
             model_probs = model.predict_proba(X_valid)[:, 1:]
             model_preds = model.predict(X_valid)
             model_auc_score = roc_auc_score(y_valid, model_probs)
-            model_f1_score = f1_score(y_valid, model_preds)
+            # model_f1_score = f1_score(y_valid, model_preds)
             fpr, tpr, _ = roc_curve(y_valid, model_probs)
             precision, recall, _ = precision_recall_curve(y_valid, model_probs)
             axes[0].plot(fpr, tpr, label=f"{labels[i]}, auc = {model_auc_score:.3f}")
-            axes[1].plot(precision, recall, label=f"{labels[i]}")
+            axes[1].plot(recall, precision, label=f"{labels[i]}")
     else:
         for i, model in enumerate(models):
             model_fit = model.fit(X_train[i], y_train[i])
             model_probs = model.predict_proba(X_valid[i])[:, 1:]
             model_preds = model.predict(X_valid[i])
             model_auc_score = roc_auc_score(y_valid[i], model_probs)
-            model_f1_score = f1_score(y_valid[i], model_preds)
+            # model_f1_score = f1_score(y_valid[i], model_preds)
             fpr, tpr, _ = roc_curve(y_valid[i], model_probs)
             precision, recall, _ = precision_recall_curve(y_valid[i], model_probs)
             axes[0].plot(fpr, tpr, label=f"{labels[i]}, auc = {model_auc_score:.3f}")
