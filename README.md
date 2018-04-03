@@ -5,7 +5,7 @@
 This repository hosts all blog posts about *machine learning, deep learning and statistical modeling*. All the contents used to produce the blog posts such as [data](data/), [images](images/), [scripts](scripts/) and [notebooks](notebooks) are included.
 
 Posts:
-- [Coding Deep Neural Network - Forward Propagation and Backpropagation]https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/04/01/coding-neural-network-fwd-bwd-prop.html
+- [Coding Deep Neural Network - Forward Propagation and Backpropagation](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/04/01/coding-neural-network-fwd-bwd-prop.html)
 - [Predicting Employee Turnover](https://imaddabbura.github.io/blog/machine%20learning/data%20science/2017/12/11/predicting-employee-turnover.html)
 - [Gradient Descent Algorithm and Its Variants](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2017/12/21/gradient-descent-algorithms.html)
 - [Character-Level Language Model](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/02/22/character-level-language-model.html)
