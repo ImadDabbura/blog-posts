@@ -194,7 +194,7 @@ def gradient_check(
 
     # Compute the difference of numerical and analytical gradients
     numerator = norm(gradients_vector - grads_approx)
-    denominator = norm(grads_approx) + np.linalg.norm(gradients_vector)
+    denominator = norm(grads_approx) + norm(gradients_vector)
     difference = numerator / denominator
 
     if difference > 10e-7:
