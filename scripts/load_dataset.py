@@ -1,58 +1,54 @@
-import os
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 
 
-def load_dataset_catvsdog(path):
+def load_dataset_catvsdog(path, images_extension='jpg'):
     """
     Loads dataset as numpy objects. It will import only images with ".jpg"
     extension.
     The data will be shuffled to avoid pre-existing ordering.
 
-    Arguments:
-    path: path of the file from current directory.
+    Arguments
+    ---------
+    path : str
+        absolute/relative path for the directory of the images.
 
-    Returns:
-    X -- input data, shape: number of features x number of examples.
-    Y -- label vector, shape: 1 x number of examples.
+    Returns
+    -------
+    X : array
+        input data, shape: number of features x number of examples.
+    Y : array
+        label vector, shape: 1 x number of examples.
     """
-    # set up the path
-    os.chdir(path)
-
-    # get all file names to iterate over all of them
-    image_list_names = os.listdir()
-    m = len(image_list_names)
-
-    # loading images
-    X = []
-
-    temp_list = image_list_names[:]
-    for img in temp_list:
-        if not img.endswith(".jpg"):
-            m -= 1
-            image_list_names.remove(img)
+    # Set up the path
+    path = Path(path)
+    
+    # Get images that have images_extensions and number of images
+    images = [str(fname) for fname in list(path.glob(f'*.{images_extension}'))]
+    m = len(images)
+    
+    # Read the images into numpy arrays
+    count = 0
+    for img in images:
+        x = plt.imread(img).astype('float')
+        if count == 0:
+            X = x
         else:
-            temp = np.array(plt.imread(img))
-            X.append(temp)
-
-    # convert to numpy array
-    X = np.array(X)
-
-    # reshape X
-    X = X.reshape(m, -1).T
+            X = np.concatenate([X, x])
+        count += 1
 
     # Derive true label vector
     Y = np.zeros((1, m))
-
-    for i, img in enumerate(image_list_names):
-        if img.startswith("cat"):
+    for i, img in enumerate(path.glob(f'*.{images_extension}')):
+        if img.stem.startswith("cat"):
             Y[:, i] = 1
-
-        elif img.startswith("dog"):
+        else:
             Y[:, i] = 0
 
-    # shuffle the dataset
+    # Reshape input X and Shuffle the dataset
+    X = X.reshape(m, -1).T
     permutation = np.random.permutation(m)
     X = X[:, permutation]
     Y = Y[:, permutation]
