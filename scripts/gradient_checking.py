@@ -6,7 +6,7 @@ Implement gradient checking of fully connected neural network.
 import numpy as np
 from numpy.linalg import norm
 
-from .coding_neural_network_from_scratch import L_model_forward, compute_cost
+from coding_neural_network_from_scratch import L_model_forward, compute_cost
 
 
 def dictionary_to_vector(params_dict):
