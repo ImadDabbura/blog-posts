@@ -5,7 +5,7 @@
 This repository hosts all blog posts about *machine learning, deep learning and statistical modeling*. All the contents used to produce the blog posts such as [data](data/), [images](images/), [scripts](scripts/) and [notebooks](notebooks) are included.
 
 Posts:
-- [Coding Neural Network - Regularization](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/05/20/coding-neural-network-dropout.html)
+- [Coding Neural Network - Dropout](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/05/20/coding-neural-network-dropout.html)
 - [Coding Neural Network - Regularization](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/05/08/coding-neural-network-regularization.html)
 - [Coding Neural Network - Parameter's Initialization](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/04/20/coding-neural-network-parameters-initialization.html)
 - [Coding Neural Network - Gradient Checking](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/04/08/coding-neural-network-gradient-checking.html)
