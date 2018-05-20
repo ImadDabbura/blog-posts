@@ -6,6 +6,7 @@ This repository hosts all blog posts about *machine learning, deep learning and 
 
 Posts:
 - [Coding Neural Network - Regularization](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/05/08/coding-neural-network-regularization.html)
+- [Coding Neural Network - Parameter's Initialization](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/04/20/coding-neural-network-parameters-initialization.html)
 - [Coding Neural Network - Gradient Checking](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/04/08/coding-neural-network-gradient-checking.html)
 - [Coding Neural Network - Forward Propagation and Backpropagation](https://imaddabbura.github.io/blog/machine%20learning/deep%20learning/2018/04/01/coding-neural-network-fwd-back-prop.html)
 - [Predicting Employee Turnover](https://imaddabbura.github.io/blog/machine%20learning/data%20science/2017/12/11/predicting-employee-turnover.html)
