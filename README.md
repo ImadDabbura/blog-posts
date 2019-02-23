@@ -5,6 +5,7 @@
 This repository hosts all blog posts about *machine learning, deep learning and statistical modeling*. All the contents used to produce the blog posts such as [data](data/), [images](images/), [scripts](scripts/) and [notebooks](notebooks) are included.
 
 Posts:
+- [Conda Essentials Notes](https://imaddabbura.github.io/post/conda_essentials/)
 - [K-Means Clustering](https://imaddabbura.github.io/post/kmeans_clustering/)
 - [Coding Neural Network - Dropout](https://imaddabbura.github.io/post/coding_neural_network_dropout/)
 - [Coding Neural Network - Regularization](https://imaddabbura.github.io/post/coding_neural_network_regularization/)
